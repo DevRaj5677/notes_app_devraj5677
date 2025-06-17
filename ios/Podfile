@@ -11,10 +11,10 @@ project 'Runner', {
 }
 
 def flutter_install_all_ios_pods(install_dir)
-  Dir.chdir(install_dir) do
-    eval(File.read(File.join(__dir__, 'Flutter', 'podhelper.rb')), binding)
-  end
+  # Skip podhelper.rb (not needed in modern Flutter projects)
+  puts "Skipping podhelper.rb — not present"
 end
+
 
 target 'Runner' do
   use_frameworks!
