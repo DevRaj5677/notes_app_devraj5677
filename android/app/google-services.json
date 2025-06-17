@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292872026411",
+    "project_id": "my-cool-notes-app-devraj5677",
+    "storage_bucket": "my-cool-notes-app-devraj5677.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292872026411:android:be2bd0e0bab87468072d6e",
+        "android_client_info": {
+          "package_name": "com.example.notes_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv1NKOJBj-BIqJyUm60n5X-VukkG2BTV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
