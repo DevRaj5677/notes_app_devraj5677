@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 hintText: 'Search notes...',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
               onChanged: (value) {
@@ -79,10 +79,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => openNoteBox(),
-        child: const Icon(Icons.add),
-      ),
+
       body: StreamBuilder<QuerySnapshot>(
         stream: firestoreService.getNotesStream(),
         builder: (context, snapshot) {
@@ -132,6 +129,10 @@ class _HomePageState extends State<HomePage> {
             return const Center(child: CircularProgressIndicator());
           }
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => openNoteBox(),
+        child: const Icon(Icons.add),
       ),
     );
   }
