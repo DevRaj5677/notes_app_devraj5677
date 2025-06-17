@@ -6,7 +6,7 @@ import 'package:notes_app/pages/home_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(MyApp()),
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
