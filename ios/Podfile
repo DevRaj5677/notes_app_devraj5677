@@ -10,7 +10,7 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 # Define path to Flutter app
 flutter_application_path = '../'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+# load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 # Main app target
 target 'Runner' do
