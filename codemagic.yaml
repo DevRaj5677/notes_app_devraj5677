@@ -6,15 +6,15 @@ workflows:
       xcode: latest
 
     scripts:
-      - name: Install dependencies
+      - name: Get Flutter dependencies
         script: |
           flutter pub get
 
-      - name: Decode Firebase plist
+      - name: Decode GoogleService-Info.plist
         script: |
           echo $GOOGLE_SERVICE_INFO | base64 --decode > ios/Runner/GoogleService-Info.plist
 
-      - name: Generate iOS project files
+      - name: Build iOS app to generate podhelper.rb
         script: |
           flutter build ios --release --no-codesign
 
