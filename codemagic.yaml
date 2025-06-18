@@ -1,34 +1,28 @@
 workflows:
-  ios-release-workflow:
+  ios-release:
     name: iOS Release Build
     environment:
       flutter: stable
       xcode: latest
-      cocoapods: default
 
     scripts:
-      - name: Flutter pub get
+      - name: Install dependencies
         script: |
           flutter pub get
 
-      - name: Clean old builds
+      - name: Decode Firebase plist
         script: |
-          flutter clean
-          rm -rf ios/Pods ios/Podfile.lock
+          echo $GOOGLE_SERVICE_INFO | base64 --decode > ios/Runner/GoogleService-Info.plist
+
+      - name: Generate iOS project files
+        script: |
+          flutter build ios --release --no-codesign
 
       - name: Install CocoaPods
         script: |
           cd ios
           pod install
           cd ..
-
-      - name: Decode GoogleService-Info.plist
-        script: |
-          echo $GOOGLE_SERVICE_INFO | base64 --decode > ios/Runner/GoogleService-Info.plist
-    
-      - name: Build iOS app
-        script: |
-          flutter build ios --release --no-codesign
 
     artifacts:
       - build/ios/iphoneos/*.app
